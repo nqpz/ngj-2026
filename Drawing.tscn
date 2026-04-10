@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://boi3veepgrt3y"]
+
+[ext_resource type="Script" uid="uid://dxv7y3gtqoyw7" path="res://drawing.gd" id="1_yxney"]
+[ext_resource type="Texture2D" uid="uid://heoh7w1kcvkf" path="res://Drawings/woman.png" id="2_cvv82"]
+
+[node name="Drawing" type="Node2D" unique_id=1463495570]
+script = ExtResource("1_yxney")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1677791967]
+texture = ExtResource("2_cvv82")

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bwfo7m8pwadfp"]
 
-[ext_resource type="Script" uid="uid://cxa8180rtbavo" path="res://background.gd" id="1_wtcfe"]
+[ext_resource type="Script" path="res://background.gd" id="1_wtcfe"]
+[ext_resource type="PackedScene" uid="uid://boi3veepgrt3y" path="res://Drawing.tscn" id="2_0e48y"]
 
 [node name="Node2D" type="Node2D" unique_id=1876203803]
 
@@ -12,3 +13,6 @@ script = ExtResource("1_wtcfe")
 [node name="Prompt" type="Polygon2D" parent="." unique_id=2080488018]
 position = Vector2(20, 557)
 polygon = PackedVector2Array(10, 10, 1105, 10, 1105, 75, 10, 75, 10, 75)
+
+[node name="Drawing" parent="." unique_id=1463495570 instance=ExtResource("2_0e48y")]
+position = Vector2(317, 242)
