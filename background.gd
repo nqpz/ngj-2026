@@ -5,6 +5,11 @@ extends Polygon2D
 func _ready() -> void:
 	pass # Replace with function body.
 
+func darken() -> void:
+	var d = 0.1
+	color.r -= d
+	color.g -= d
+	color.b -= d
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
