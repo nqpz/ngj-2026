@@ -13,6 +13,7 @@ func darken() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	pass
 	# DEBUG
 	# if Input.is_key_pressed(KEY_SPACE):
 	# 	darken()
