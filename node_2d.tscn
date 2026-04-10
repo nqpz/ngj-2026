@@ -1,10 +1,13 @@
 [gd_scene format=3 uid="uid://bwfo7m8pwadfp"]
 
+[ext_resource type="Script" uid="uid://cxa8180rtbavo" path="res://background.gd" id="1_wtcfe"]
+
 [node name="Node2D" type="Node2D" unique_id=1876203803]
 
 [node name="Background" type="Polygon2D" parent="." unique_id=2086192896]
 position = Vector2(20, 20)
 polygon = PackedVector2Array(10, 10, 1105, 10, 1105, 520, 573, 520, 10, 520, 10, 540)
+script = ExtResource("1_wtcfe")
 
 [node name="Prompt" type="Polygon2D" parent="." unique_id=2080488018]
 position = Vector2(20, 557)
