@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b3k6b2a3clu4q" path="res://Drawings/tree.png" id="7_d21ai"]
 [ext_resource type="Texture2D" uid="uid://b46dhk38rr7c5" path="res://Drawings/person.png" id="8_rj586"]
 [ext_resource type="Texture2D" uid="uid://heoh7w1kcvkf" path="res://Drawings/woman.png" id="9_ir8iy"]
+[ext_resource type="Texture2D" uid="uid://ckt2v0msl4hxd" path="res://Drawings/sitting.png" id="10_ir8iy"]
 
 [sub_resource type="FontVariation" id="FontVariation_4d7sh"]
 
@@ -66,5 +67,9 @@ image = ExtResource("7_d21ai")
 [node name="Person" parent="Drawings" unique_id=2023863569 instance=ExtResource("2_0e48y")]
 position = Vector2(601, 201)
 image = ExtResource("8_rj586")
+
+[node name="Sitting" parent="Drawings" unique_id=1770653813 instance=ExtResource("2_0e48y")]
+position = Vector2(1030, 449)
+image = ExtResource("10_ir8iy")
 
 [connection signal="timeout" from="Background/FadeOutTimer" to="Background" method="darken"]
