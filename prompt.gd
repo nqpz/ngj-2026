@@ -51,7 +51,7 @@ func add_drawing(drawing: Drawing):
 	for d in drawing.get_parent().get_children():
 		if d.step() and d != drawing:
 			d.decrease_interaction()
-	if drawing.get_parent() == null:
+	if get_node("../Drawings").get_children().is_empty():
 		get_node("../Background/FadeOutTimer").start()
 	else:
 		show_next_prompt()
