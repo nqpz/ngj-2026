@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://b46dhk38rr7c5" path="res://Drawings/person.png" id="8_rj586"]
 [ext_resource type="Texture2D" uid="uid://heoh7w1kcvkf" path="res://Drawings/woman.png" id="9_ir8iy"]
 
+[sub_resource type="FontVariation" id="FontVariation_4d7sh"]
+
 [node name="Node2D" type="Node2D" unique_id=1876203803]
 
 [node name="Background" type="Polygon2D" parent="." unique_id=2086192896 node_paths=PackedStringArray("prompt")]
@@ -27,11 +29,24 @@ polygon = PackedVector2Array(0, 0, 1095, 0, 1095, 75, 0, 75, 0, 75)
 [node name="Prompt2" parent="." unique_id=1403518388 instance=ExtResource("3_epypp")]
 position = Vector2(64, 586)
 
-[node name="Heart" parent="." unique_id=1463495570 instance=ExtResource("2_0e48y")]
-position = Vector2(524, 289)
+[node name="Start screen" type="Node2D" parent="." unique_id=908532768]
+
+[node name="Drag to die" type="Label" parent="Start screen" unique_id=494693107]
+modulate = Color(0, 0, 0, 1)
+offset_left = 445.0
+offset_top = 136.0
+offset_right = 668.0
+offset_bottom = 194.0
+theme_override_fonts/font = SubResource("FontVariation_4d7sh")
+theme_override_font_sizes/font_size = 42
+text = "Drag to die"
+
+[node name="Heart" parent="Start screen" unique_id=1463495570 instance=ExtResource("2_0e48y")]
+position = Vector2(555, 289)
 image = ExtResource("4_rj586")
 
 [node name="Drawings" type="Node2D" parent="." unique_id=626519499]
+visible = false
 
 [node name="Woman" parent="Drawings" unique_id=1837430617 instance=ExtResource("2_0e48y")]
 position = Vector2(343, 277)
@@ -48,6 +63,7 @@ image = ExtResource("6_kdubu")
 [node name="Tree" parent="Drawings" unique_id=1134631513 instance=ExtResource("2_0e48y")]
 position = Vector2(92, 470)
 image = ExtResource("7_d21ai")
+
 [node name="Person" parent="Drawings" unique_id=2023863569 instance=ExtResource("2_0e48y")]
 position = Vector2(601, 201)
 image = ExtResource("8_rj586")
