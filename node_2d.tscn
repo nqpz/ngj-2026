@@ -46,7 +46,6 @@ position = Vector2(555, 289)
 image = ExtResource("4_rj586")
 
 [node name="Drawings" type="Node2D" parent="." unique_id=626519499]
-visible = false
 
 [node name="Woman" parent="Drawings" unique_id=1837430617 instance=ExtResource("2_0e48y")]
 position = Vector2(343, 277)
