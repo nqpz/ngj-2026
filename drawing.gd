@@ -28,6 +28,7 @@ func decrease_interaction():
 	if greyness_level == 20:
 		return
 	greyness_level += 2
+	$AnimationPlayer.speed_scale /= 1.3
 	update_color()
 
 func update_color():
