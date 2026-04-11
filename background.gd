@@ -13,6 +13,9 @@ func _ready() -> void:
 func darken() -> void:
 	greyness_level -= 1
 	update_color()
+	if greyness_level == 0:
+		get_node("../Background/FadeOutTimer").stop()
+		print('TODO show epilogue text now')
 
 func update_color() -> void:
 	var color_val := 0.1*float(greyness_level)

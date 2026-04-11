@@ -24,8 +24,7 @@ func add_drawing(drawing: Drawing):
 		if d.step() and d != drawing:
 			d.decrease_interaction()
 	if drawing.get_parent() == null:
-		# TODO: Fade to black
-		pass
+		get_node("../Background/FadeOutTimer").start()
 	else:
 		show_next_prompt()
 

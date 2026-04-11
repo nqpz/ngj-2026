@@ -15,6 +15,8 @@ polygon = PackedVector2Array(10, 10, 1105, 10, 1105, 520, 573, 520, 10, 520, 10,
 script = ExtResource("1_wtcfe")
 prompt = NodePath("../Prompt2")
 
+[node name="FadeOutTimer" type="Timer" parent="Background" unique_id=627069753]
+
 [node name="PromptDropPoint" type="Control" parent="." unique_id=280329470 node_paths=PackedStringArray("prompt")]
 layout_mode = 3
 anchors_preset = 0
@@ -40,3 +42,5 @@ image = ExtResource("9_ir8iy")
 [node name="Dog" parent="Drawings" unique_id=264802716 instance=ExtResource("2_0e48y")]
 position = Vector2(596, 341)
 image = ExtResource("5_d21ai")
+
+[connection signal="timeout" from="Background/FadeOutTimer" to="Background" method="darken"]
