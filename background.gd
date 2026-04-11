@@ -7,7 +7,7 @@ func _ready() -> void:
 	prompt.connect("prompt_finished", darken)
 
 func darken() -> void:
-	var d = 0.1
+	var d := 0.1
 	color.r -= d
 	color.g -= d
 	color.b -= d
