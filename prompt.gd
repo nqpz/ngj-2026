@@ -18,9 +18,11 @@ func read_prompts():
 	prompt_list = text.split("\n")
 
 # Use this when when a drawing is added to the prompt.
-# Currently we assume that there is always exactly one blank.
 func add_drawing(drawing: Drawing):
-	drawing.increase_interaction()
+	# Decrease interaction for all drawings not picked.
+	for d in drawing.get_parent().get_children():
+		if d != drawing:
+			d.decrease_interaction()
 	show_next_prompt()
 
 func show_next_prompt():

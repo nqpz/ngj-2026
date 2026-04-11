@@ -10,7 +10,7 @@ func _ready():
 	$Sprite2D.texture = image
 	update_color()
 
-func increase_interaction():
+func decrease_interaction():
 	if(greyness_level == 10):
 		return
 	greyness_level = greyness_level + 1
