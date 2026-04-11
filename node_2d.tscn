@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://cxa8180rtbavo" path="res://background.gd" id="1_wtcfe"]
 [ext_resource type="PackedScene" uid="uid://boi3veepgrt3y" path="res://Drawing.tscn" id="2_0e48y"]
-[ext_resource type="Script" uid="uid://b7pficnmv488g" path="res://prompt_drop_point.gd" id="2_q6r6c"]
 [ext_resource type="PackedScene" uid="uid://bcf40j7bpx3ka" path="res://Prompt.tscn" id="3_epypp"]
 [ext_resource type="Texture2D" uid="uid://wubijvlt275m" path="res://Drawings/dog.png" id="5_d21ai"]
 [ext_resource type="Texture2D" uid="uid://heoh7w1kcvkf" path="res://Drawings/woman.png" id="9_ir8iy"]
@@ -17,17 +16,8 @@ prompt = NodePath("../Prompt2")
 
 [node name="FadeOutTimer" type="Timer" parent="Background" unique_id=627069753]
 
-[node name="PromptDropPoint" type="Control" parent="." unique_id=280329470 node_paths=PackedStringArray("prompt")]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 30.0
-offset_top = 557.0
-offset_right = 1125.0
-offset_bottom = 632.0
-script = ExtResource("2_q6r6c")
-prompt = NodePath("../Prompt2")
-
-[node name="Prompt" type="Polygon2D" parent="PromptDropPoint" unique_id=2080488018]
+[node name="Prompt" type="Polygon2D" parent="." unique_id=2080488018]
+position = Vector2(30, 557)
 polygon = PackedVector2Array(0, 0, 1095, 0, 1095, 75, 0, 75, 0, 75)
 
 [node name="Prompt2" parent="." unique_id=1403518388 instance=ExtResource("3_epypp")]

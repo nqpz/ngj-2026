@@ -8,7 +8,10 @@ var prompt_list: PackedStringArray
 
 @export var testDrawing: Drawing
 
+static var prompt: Prompt
+
 func _ready():
+	prompt = self
 	read_prompts()
 	show_next_prompt()
 
