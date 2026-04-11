@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://boi3veepgrt3y" path="res://Drawing.tscn" id="2_0e48y"]
 [ext_resource type="Script" uid="uid://b7pficnmv488g" path="res://prompt_drop_point.gd" id="2_q6r6c"]
 [ext_resource type="PackedScene" uid="uid://bcf40j7bpx3ka" path="res://Prompt.tscn" id="3_epypp"]
+[ext_resource type="Texture2D" uid="uid://wubijvlt275m" path="res://Drawings/dog.png" id="5_d21ai"]
 [ext_resource type="Texture2D" uid="uid://heoh7w1kcvkf" path="res://Drawings/woman.png" id="9_ir8iy"]
 
 [node name="Node2D" type="Node2D" unique_id=1876203803]
@@ -30,6 +31,10 @@ polygon = PackedVector2Array(0, 0, 1095, 0, 1095, 75, 0, 75, 0, 75)
 [node name="Drawing" parent="." unique_id=1463495570 instance=ExtResource("2_0e48y")]
 position = Vector2(343, 277)
 image = ExtResource("9_ir8iy")
+
+[node name="Drawing2" parent="." unique_id=264802716 instance=ExtResource("2_0e48y")]
+position = Vector2(596, 341)
+image = ExtResource("5_d21ai")
 
 [node name="Prompt2" parent="." unique_id=1403518388 instance=ExtResource("3_epypp")]
 position = Vector2(64, 586)
