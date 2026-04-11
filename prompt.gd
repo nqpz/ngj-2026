@@ -45,18 +45,24 @@ func show_text_from_file(file_name: String):
 	var text = f.get_as_text()
 	message_queue = text.split("\n", false)
 
+# Keep track to keep the used drawings the same color
+var drawings_used_for_current_prompt := []
+
 # Use this when when a drawing is added to the prompt.
 func add_drawing(drawing: Drawing):
+	drawings_used_for_current_prompt.append(drawing)
 	if !_all_drop_points_are_filled():
 		return
 	# Decrease interaction for all drawings not picked.
 	var all_deleted = true
 	for d in drawing.get_parent().get_children():
 		if d.step():
-			if d != drawing:
+			if d not in drawings_used_for_current_prompt:
 				d.decrease_interaction()
 			# At least one drawing still exists, so we're not quite done yet.
 			all_deleted = false
+    # Reset for next prompt
+	drawings_used_for_current_prompt = []
 	if all_deleted:
 		get_node("../Background/FadeOutTimer").start()
 	else:
