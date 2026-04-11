@@ -1,5 +1,5 @@
 class_name PromptPart
-extends Node
+extends Control
 
 func render(offset: int) -> Control:
 	assert(false, "Implemented by children")
