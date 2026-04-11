@@ -2,6 +2,7 @@ class_name Background
 extends Polygon2D
 
 @export var prompt: Prompt
+@export var prompt_animation_player: AnimationPlayer
 
 # Should be between 1 and 10
 static var greyness_level: int = 20
@@ -16,6 +17,7 @@ func darken() -> void:
 	if greyness_level == 0:
 		get_node("../Background/FadeOutTimer").stop()
 		prompt.show_text_from_file(Prompt.epilogue_file_name)
+		prompt_animation_player.play("die")
 
 func update_color() -> void:
 	var color_val := 0.05*float(greyness_level)

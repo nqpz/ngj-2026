@@ -11,7 +11,7 @@ func _get_richtext(string: String, offset: int) -> RichTextLabel:
 	font.set_embolden(0, 0.4)
 	label.push_font(font)
 	label.push_font_size(24)
-	label.push_color(Color(0.2, 0.2, 0.2))
+	label.push_color(Color.BLACK)
 	label.add_text(string)
 	label.autowrap_mode = TextServer.AUTOWRAP_OFF
 	label.fit_content = true

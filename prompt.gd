@@ -25,7 +25,7 @@ func _ready():
 func _show_tutorial():
 	print("hiding")
 	drawings.hide()
-	_render_prompt("I feels my [] stopping.")
+	_render_prompt("I feel my [] stopping.")
 
 func _show_real_scene():
 	drawings.show()
