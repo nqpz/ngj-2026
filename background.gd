@@ -15,6 +15,7 @@ func darken() -> void:
 	update_color()
 	if greyness_level == 0:
 		get_node("../Background/FadeOutTimer").stop()
+		prompt.show_text_from_file(Prompt.epilogue_file_name)
 		print('TODO show epilogue text now')
 
 func update_color() -> void:

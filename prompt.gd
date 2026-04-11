@@ -3,7 +3,9 @@ extends Node2D
 
 signal prompt_finished
 
-var prompt_file_name: String = 'res://Prompts/prompts.txt'
+static var prompt_file_name: String = 'res://Prompts/prompts.txt'
+static var prologue_file_name: String = "res://Prompts/prologue.txt"
+static var epilogue_file_name: String = 'res://Prompts/epilogue.txt'
 var prompt_list: PackedStringArray
 
 var message_queue = null
@@ -17,7 +19,7 @@ static var prompt: Prompt
 func _ready():
 	prompt = self
 	read_prompts()
-	show_text_from_file("res://Prompts/prologue.txt")
+	show_text_from_file(prologue_file_name)
 
 func _process(delta):
 	if message_queue == null:
@@ -38,6 +40,7 @@ func read_prompts():
 	prompt_list = text.split("\n", false)
 
 func show_text_from_file(file_name: String):
+	current_message_timer = 999999999 # Certainly above max time, so we render immediately
 	var f = FileAccess.open(file_name, FileAccess.READ)
 	var text = f.get_as_text()
 	message_queue = text.split("\n", false)
