@@ -19,7 +19,7 @@ func decrease_interaction():
 
 	if greyness_level == 10:
 		return
-	greyness_level = greyness_level + 1
+	greyness_level += 1
 	update_color()
 
 func update_color():
