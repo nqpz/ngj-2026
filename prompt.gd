@@ -47,6 +47,8 @@ func show_text_from_file(file_name: String):
 
 # Use this when when a drawing is added to the prompt.
 func add_drawing(drawing: Drawing):
+	if !_all_drop_points_are_filled():
+		return
 	# Decrease interaction for all drawings not picked.
 	var all_deleted = true
 	for d in drawing.get_parent().get_children():
@@ -67,7 +69,14 @@ func show_next_prompt():
 	$AnimationPlayer.play("fade_in")
 	prompt_list.remove_at(idx)
 	emit_signal("prompt_finished")
-	
+
+func _all_drop_points_are_filled() -> bool:
+	for c in $Node2D.get_children():
+		var image := c as DropableTextureRect
+		if image && !image.was_changed:
+			return false
+	return true
+
 func _render_prompt(prompt: String):
 	# Remove old children:
 	for c in $Node2D.get_children():
