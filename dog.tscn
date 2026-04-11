@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://ddlu16o1fbcfr"]
+
+[ext_resource type="Texture2D" uid="uid://wubijvlt275m" path="res://Drawings/dog.png" id="1_c5eso"]
+
+[node name="Dog" type="Sprite2D" unique_id=1540334995]
+texture = ExtResource("1_c5eso")
