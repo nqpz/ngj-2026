@@ -33,10 +33,10 @@ position = Vector2(64, 586)
 
 [node name="Drawings" type="Node2D" parent="." unique_id=626519499]
 
-[node name="DrawingWoman" parent="Drawings" unique_id=1463495570 instance=ExtResource("2_0e48y")]
+[node name="Woman" parent="Drawings" unique_id=1463495570 instance=ExtResource("2_0e48y")]
 position = Vector2(343, 277)
 image = ExtResource("9_ir8iy")
 
-[node name="DrawingDog" parent="Drawings" unique_id=264802716 instance=ExtResource("2_0e48y")]
+[node name="Dog" parent="Drawings" unique_id=264802716 instance=ExtResource("2_0e48y")]
 position = Vector2(596, 341)
 image = ExtResource("5_d21ai")
