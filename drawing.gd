@@ -1,10 +1,13 @@
 class_name Drawing
 extends Node2D
 
+@export var image: Texture2D
+
 # Should be between 1 and 10
 var greyness_level: int = 1
 
 func _ready():
+	$Sprite2D.texture = image
 	update_color()
 
 func increase_interaction():
