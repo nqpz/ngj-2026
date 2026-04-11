@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://bwfo7m8pwadfp"]
 
-[ext_resource type="Script" path="res://background.gd" id="1_wtcfe"]
+[ext_resource type="Script" uid="uid://cxa8180rtbavo" path="res://background.gd" id="1_wtcfe"]
 [ext_resource type="PackedScene" uid="uid://boi3veepgrt3y" path="res://Drawing.tscn" id="2_0e48y"]
+[ext_resource type="Script" uid="uid://bibiceqtgqie2" path="res://drawing_drag_and_drop_control.gd" id="2_epypp"]
 
 [node name="Node2D" type="Node2D" unique_id=1876203803]
 
@@ -14,5 +15,14 @@ script = ExtResource("1_wtcfe")
 position = Vector2(20, 557)
 polygon = PackedVector2Array(10, 10, 1105, 10, 1105, 75, 10, 75, 10, 75)
 
-[node name="Drawing" parent="." unique_id=1463495570 instance=ExtResource("2_0e48y")]
-position = Vector2(317, 242)
+[node name="DrawingDragAndDropControl" type="Control" parent="." unique_id=2085939729]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 317.0
+offset_top = 242.0
+offset_right = 378.0
+offset_bottom = 329.0
+script = ExtResource("2_epypp")
+
+[node name="Drawing" parent="DrawingDragAndDropControl" unique_id=1463495570 instance=ExtResource("2_0e48y")]
+position = Vector2(26, 35)
