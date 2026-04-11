@@ -4,7 +4,7 @@ extends Polygon2D
 @export var prompt: Prompt
 
 # Should be between 1 and 10
-static var greyness_level: int = 10
+static var greyness_level: int = 20
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -19,5 +19,5 @@ func darken() -> void:
 		print('TODO show epilogue text now')
 
 func update_color() -> void:
-	var color_val := 0.1*float(greyness_level)
+	var color_val := 0.05*float(greyness_level)
 	color = Color(color_val, color_val, color_val)

@@ -20,11 +20,11 @@ func step() -> bool:
 		return true
 
 func decrease_interaction():
-	if greyness_level == 10:
+	if greyness_level == 20:
 		return
-	greyness_level += 1
+	greyness_level += 2
 	update_color()
 
 func update_color():
-	var color_val = 0.1*float(greyness_level)
+	var color_val = 0.05*float(greyness_level)
 	$Sprite2D.modulate = Color(color_val, color_val, color_val)
