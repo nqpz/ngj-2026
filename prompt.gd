@@ -6,6 +6,10 @@ signal prompt_finished
 var prompt_file_name: String = 'res://Prompts/prompts.txt'
 var prompt_list: PackedStringArray
 
+var message_queue = null
+var current_message_timer: float = 9999999
+var message_time: float = 6
+
 @export var testDrawing: Drawing
 
 static var prompt: Prompt
@@ -13,12 +17,30 @@ static var prompt: Prompt
 func _ready():
 	prompt = self
 	read_prompts()
-	show_next_prompt()
+	show_text_from_file("res://Prompts/prologue.txt")
+
+func _process(delta):
+	if message_queue == null:
+		return
+	current_message_timer += delta
+	if current_message_timer >= message_time:
+		current_message_timer = 0
+		if  message_queue.size() > 0:
+			_render_prompt(message_queue[0])
+			message_queue.remove_at(0)
+		else:
+			show_next_prompt()
+			message_queue = null
 
 func read_prompts():
 	var f = FileAccess.open(prompt_file_name, FileAccess.READ)
 	var text = f.get_as_text()
-	prompt_list = text.split("\n")
+	prompt_list = text.split("\n", false)
+
+func show_text_from_file(file_name: String):
+	var f = FileAccess.open(file_name, FileAccess.READ)
+	var text = f.get_as_text()
+	message_queue = text.split("\n", false)
 
 # Use this when when a drawing is added to the prompt.
 func add_drawing(drawing: Drawing):
