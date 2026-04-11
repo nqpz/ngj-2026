@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://b46dhk38rr7c5" path="res://Drawings/person.png" id="8_rj586"]
 [ext_resource type="Texture2D" uid="uid://heoh7w1kcvkf" path="res://Drawings/woman.png" id="9_ir8iy"]
 [ext_resource type="Texture2D" uid="uid://ckt2v0msl4hxd" path="res://Drawings/sitting.png" id="10_ir8iy"]
+[ext_resource type="Texture2D" uid="uid://g48kf70tj4un" path="res://Drawings/propeller_hat_person.png" id="12_x0ka3"]
 
 [node name="Node2D" type="Node2D" unique_id=1876203803]
 
@@ -60,7 +61,7 @@ position = Vector2(766, 265)
 image = ExtResource("6_kdubu")
 
 [node name="Tree" parent="Drawings" unique_id=1134631513 instance=ExtResource("2_0e48y")]
-position = Vector2(92, 470)
+position = Vector2(196, 397)
 image = ExtResource("7_d21ai")
 
 [node name="Person" parent="Drawings" unique_id=2023863569 instance=ExtResource("2_0e48y")]
@@ -70,5 +71,9 @@ image = ExtResource("8_rj586")
 [node name="Sitting" parent="Drawings" unique_id=1770653813 instance=ExtResource("2_0e48y")]
 position = Vector2(1030, 449)
 image = ExtResource("10_ir8iy")
+
+[node name="Propeller hat person" parent="Drawings" unique_id=18894807 instance=ExtResource("2_0e48y")]
+position = Vector2(439, 341)
+image = ExtResource("12_x0ka3")
 
 [connection signal="timeout" from="Background/FadeOutTimer" to="Background" method="darken"]
