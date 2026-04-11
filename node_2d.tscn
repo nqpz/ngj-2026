@@ -28,13 +28,13 @@ prompt = NodePath("../Prompt2")
 [node name="Prompt" type="Polygon2D" parent="PromptDropPoint" unique_id=2080488018]
 polygon = PackedVector2Array(0, 0, 1095, 0, 1095, 75, 0, 75, 0, 75)
 
-[node name="Drawing" parent="." unique_id=1463495570 instance=ExtResource("2_0e48y")]
+[node name="Prompt2" parent="." unique_id=1403518388 instance=ExtResource("3_epypp")]
+position = Vector2(64, 586)
+
+[node name="DrawingWoman" parent="." unique_id=1463495570 instance=ExtResource("2_0e48y")]
 position = Vector2(343, 277)
 image = ExtResource("9_ir8iy")
 
-[node name="Drawing2" parent="." unique_id=264802716 instance=ExtResource("2_0e48y")]
+[node name="DrawingDog" parent="." unique_id=264802716 instance=ExtResource("2_0e48y")]
 position = Vector2(596, 341)
 image = ExtResource("5_d21ai")
-
-[node name="Prompt2" parent="." unique_id=1403518388 instance=ExtResource("3_epypp")]
-position = Vector2(64, 586)
