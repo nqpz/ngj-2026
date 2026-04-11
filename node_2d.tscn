@@ -27,24 +27,26 @@ prompt = NodePath("../Prompt2")
 position = Vector2(30, 537)
 polygon = PackedVector2Array(0, 0, 1095, 0, 1095, 105, 548.818, 105, 0, 105, 0, 105)
 
-[node name="Prompt2" parent="." unique_id=1403518388 instance=ExtResource("3_epypp")]
+[node name="Prompt2" parent="." unique_id=1403518388 node_paths=PackedStringArray("drawings", "tutorial_things") instance=ExtResource("3_epypp")]
 position = Vector2(64, 574)
+drawings = NodePath("../Drawings")
+tutorial_things = NodePath("../Start screen")
 
 [node name="Start screen" type="Node2D" parent="." unique_id=908532768]
-
-[node name="Drag to die" type="Label" parent="Start screen" unique_id=494693107]
-modulate = Color(0, 0, 0, 1)
-offset_left = 445.0
-offset_top = 136.0
-offset_right = 668.0
-offset_bottom = 194.0
-theme_override_fonts/font = ExtResource("3_hqns4")
-theme_override_font_sizes/font_size = 42
-text = "Drag to die"
 
 [node name="Heart" parent="Start screen" unique_id=1463495570 instance=ExtResource("2_0e48y")]
 position = Vector2(555, 289)
 image = ExtResource("4_rj586")
+
+[node name="DragToDie" type="Label" parent="Start screen" unique_id=494693107]
+modulate = Color(0, 0, 0, 1)
+offset_left = 445.0
+offset_top = 136.0
+offset_right = 668.0
+offset_bottom = 198.0
+theme_override_fonts/font = ExtResource("3_hqns4")
+theme_override_font_sizes/font_size = 42
+text = "Drag to die"
 
 [node name="Drawings" type="Node2D" parent="." unique_id=626519499]
 

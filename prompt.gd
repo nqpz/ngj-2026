@@ -12,13 +12,24 @@ var message_queue = null
 var current_message_timer: float = 9999999
 var message_time: float = 6
 
-@export var testDrawing: Drawing
+@export var drawings: Node2D
+@export var tutorial_things: Node2D
 
 static var prompt: Prompt
 
 func _ready():
 	prompt = self
 	read_prompts()
+	_show_tutorial()
+
+func _show_tutorial():
+	print("hiding")
+	drawings.hide()
+	_render_prompt("I feels my [] stopping.")
+
+func _show_real_scene():
+	drawings.show()
+	tutorial_things.hide()
 	show_text_from_file(prologue_file_name)
 
 func _process(delta):
@@ -55,8 +66,10 @@ func add_drawing(drawing: Drawing):
 		return
 	# Decrease interaction for all drawings not picked.
 	var all_deleted = true
-	for d in drawing.get_parent().get_children():
-		if d.step():
+
+	for maybe_drawing in drawing.get_parent().get_children():
+		var d := maybe_drawing as Drawing
+		if d && d.step():
 			if d not in drawings_used_for_current_prompt:
 				d.decrease_interaction()
 			# At least one drawing still exists, so we're not quite done yet.
@@ -70,6 +83,12 @@ func add_drawing(drawing: Drawing):
 
 func show_next_prompt():
 	assert(prompt_list.size() > 0, "Prompt list was empty")
+	# If we wan't so show the next prompt, but "drawings" are hidden, it means that we are in the
+	# tutorial level (the only time drawings are not visible) and that the user has finished the
+	# tutorial prompt. In that case we need to go to the real scene:
+	# (Yes, this is the best place to tranistion from tutorial to real)
+	if !drawings.visible:
+		_show_real_scene()
 	var idx = randi() % prompt_list.size()
 	_render_prompt(prompt_list[idx])
 	$AnimationPlayer.play("fade_in")
