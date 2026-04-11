@@ -12,7 +12,7 @@ func _ready():
 
 func step() -> bool:
 	# Delete drawing if same color as background.
-	if Background.greyness_level - 1 == greyness_level or Background.greyness_level - 1 == greyness_level + 1:
+	if greyness_level + 2 >= Background.greyness_level - 1:
 		get_parent().remove_child(self)
 		queue_free()
 		return false
