@@ -3,7 +3,11 @@ extends Node2D
 
 signal prompt_finished
 
-static var prompt_file_name: String = 'res://Prompts/prompts.txt'
+var age = 0
+var age_counter = 0
+var max_number_of_prompts_pr_stage = 4
+
+static var prompt_file_names: Array[String] = ['res://Prompts/prompts_young.txt', 'res://Prompts/prompts_adult.txt', 'res://Prompts/prompts_old.txt']
 static var prologue_file_name: String = "res://Prompts/prologue.txt"
 static var epilogue_file_name: String = 'res://Prompts/epilogue.txt'
 var prompt_list: PackedStringArray
@@ -46,7 +50,7 @@ func _process(delta):
 			message_queue = null
 
 func read_prompts():
-	var f = FileAccess.open(prompt_file_name, FileAccess.READ)
+	var f = FileAccess.open(prompt_file_names[age], FileAccess.READ)
 	var text = f.get_as_text()
 	prompt_list = text.split("\n", false)
 
@@ -82,7 +86,12 @@ func add_drawing(drawing: Drawing):
 		$AnimationPlayer.play("fade_out") # Animation calls show_next_prompt()
 
 func show_next_prompt():
-	assert(prompt_list.size() > 0, "Prompt list was empty")
+	if prompt_list.size() == 0 || age_counter >= max_number_of_prompts_pr_stage:
+		if age < 2: # There are ages 0, 1, 2. Don't increase above that.
+			age += 1
+		read_prompts()
+		age_counter = 0
+	age_counter += 1
 	# If we wan't so show the next prompt, but "drawings" are hidden, it means that we are in the
 	# tutorial level (the only time drawings are not visible) and that the user has finished the
 	# tutorial prompt. In that case we need to go to the real scene:
