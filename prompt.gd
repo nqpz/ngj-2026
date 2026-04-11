@@ -54,12 +54,13 @@ func add_drawing(drawing: Drawing):
 	if get_node("../Drawings").get_children().is_empty():
 		get_node("../Background/FadeOutTimer").start()
 	else:
-		show_next_prompt()
+		$AnimationPlayer.play("fade_out") # Animation calls show_next_prompt()
 
 func show_next_prompt():
 	assert(prompt_list.size() > 0, "Prompt list was empty")
 	var idx = randi() % prompt_list.size()
 	_render_prompt(prompt_list[idx])
+	$AnimationPlayer.play("fade_in")
 	prompt_list.remove_at(idx)
 	emit_signal("prompt_finished")
 	

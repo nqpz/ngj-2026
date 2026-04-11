@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://wubijvlt275m" path="res://Drawings/dog.png" id="5_d21ai"]
 [ext_resource type="Texture2D" uid="uid://tderinhih3wo" path="res://Drawings/bearded_man.png" id="6_kdubu"]
 [ext_resource type="Texture2D" uid="uid://b3k6b2a3clu4q" path="res://Drawings/tree.png" id="7_d21ai"]
+[ext_resource type="Texture2D" uid="uid://b46dhk38rr7c5" path="res://Drawings/person.png" id="8_rj586"]
 [ext_resource type="Texture2D" uid="uid://heoh7w1kcvkf" path="res://Drawings/woman.png" id="9_ir8iy"]
 
 [node name="Node2D" type="Node2D" unique_id=1876203803]
@@ -47,5 +48,8 @@ image = ExtResource("6_kdubu")
 [node name="Tree" parent="Drawings" unique_id=1134631513 instance=ExtResource("2_0e48y")]
 position = Vector2(92, 470)
 image = ExtResource("7_d21ai")
+[node name="Person" parent="Drawings" unique_id=2023863569 instance=ExtResource("2_0e48y")]
+position = Vector2(601, 201)
+image = ExtResource("8_rj586")
 
 [connection signal="timeout" from="Background/FadeOutTimer" to="Background" method="darken"]
