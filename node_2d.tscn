@@ -17,18 +17,18 @@
 
 [node name="Background" type="Polygon2D" parent="." unique_id=2086192896 node_paths=PackedStringArray("prompt")]
 position = Vector2(20, 20)
-polygon = PackedVector2Array(10, 10, 1105, 10, 1105, 520, 573, 520, 10, 520, 10, 540)
+polygon = PackedVector2Array(10, 10, 1105, 10, 1105, 500, 573, 500, 10, 500, 10, 500)
 script = ExtResource("1_wtcfe")
 prompt = NodePath("../Prompt2")
 
 [node name="FadeOutTimer" type="Timer" parent="Background" unique_id=627069753]
 
 [node name="Prompt" type="Polygon2D" parent="." unique_id=2080488018]
-position = Vector2(30, 557)
-polygon = PackedVector2Array(0, 0, 1095, 0, 1095, 75, 0, 75, 0, 75)
+position = Vector2(30, 537)
+polygon = PackedVector2Array(0, 0, 1095, 0, 1095, 105, 548.818, 105, 0, 105, 0, 105)
 
 [node name="Prompt2" parent="." unique_id=1403518388 instance=ExtResource("3_epypp")]
-position = Vector2(64, 586)
+position = Vector2(64, 574)
 
 [node name="Start screen" type="Node2D" parent="." unique_id=908532768]
 
