@@ -11,7 +11,13 @@ func _ready():
 	update_color()
 
 func decrease_interaction():
-	if(greyness_level == 10):
+	# Delete drawing if same color as background.
+	if Background.greyness_level - 1 == greyness_level or Background.greyness_level - 1 == greyness_level + 1:
+		get_parent().remove_child(self)
+		queue_free()
+		return
+
+	if greyness_level == 10:
 		return
 	greyness_level = greyness_level + 1
 	update_color()
