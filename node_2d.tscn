@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://boi3veepgrt3y" path="res://Drawing.tscn" id="2_0e48y"]
 [ext_resource type="PackedScene" uid="uid://bcf40j7bpx3ka" path="res://Prompt.tscn" id="3_epypp"]
 [ext_resource type="Texture2D" uid="uid://wubijvlt275m" path="res://Drawings/dog.png" id="5_d21ai"]
+[ext_resource type="Texture2D" uid="uid://tderinhih3wo" path="res://Drawings/bearded_man.png" id="6_kdubu"]
 [ext_resource type="Texture2D" uid="uid://heoh7w1kcvkf" path="res://Drawings/woman.png" id="9_ir8iy"]
 
 [node name="Node2D" type="Node2D" unique_id=1876203803]
@@ -32,5 +33,9 @@ image = ExtResource("9_ir8iy")
 [node name="Dog" parent="Drawings" unique_id=264802716 instance=ExtResource("2_0e48y")]
 position = Vector2(596, 341)
 image = ExtResource("5_d21ai")
+
+[node name="Bearded man" parent="Drawings" unique_id=149693373 instance=ExtResource("2_0e48y")]
+position = Vector2(766, 265)
+image = ExtResource("6_kdubu")
 
 [connection signal="timeout" from="Background/FadeOutTimer" to="Background" method="darken"]
