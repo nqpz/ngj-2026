@@ -7,7 +7,11 @@ func render(offset: int) -> Control:
 	
 func _get_richtext(string: String, offset: int) -> RichTextLabel:
 	var label = RichTextLabel.new()
-	label.push_color(Color(0.5, 0.5, 0.5))
+	var font : FontFile = load("res://Oregano-Regular.ttf")
+	font.set_embolden(0, 0.4)
+	label.push_font(font)
+	label.push_font_size(24)
+	label.push_color(Color(0.2, 0.2, 0.2))
 	label.add_text(string)
 	label.autowrap_mode = TextServer.AUTOWRAP_OFF
 	label.fit_content = true

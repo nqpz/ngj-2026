@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cxa8180rtbavo" path="res://background.gd" id="1_wtcfe"]
 [ext_resource type="PackedScene" uid="uid://boi3veepgrt3y" path="res://Drawing.tscn" id="2_0e48y"]
 [ext_resource type="PackedScene" uid="uid://bcf40j7bpx3ka" path="res://Prompt.tscn" id="3_epypp"]
+[ext_resource type="FontFile" uid="uid://ceq7teotfbsxo" path="res://KaushanScript-Regular.ttf" id="3_hqns4"]
 [ext_resource type="Texture2D" uid="uid://dto0ooujuw5xg" path="res://Drawings/heart.png" id="4_rj586"]
 [ext_resource type="Texture2D" uid="uid://wubijvlt275m" path="res://Drawings/dog.png" id="5_d21ai"]
 [ext_resource type="Texture2D" uid="uid://tderinhih3wo" path="res://Drawings/bearded_man.png" id="6_kdubu"]
@@ -10,8 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://b46dhk38rr7c5" path="res://Drawings/person.png" id="8_rj586"]
 [ext_resource type="Texture2D" uid="uid://heoh7w1kcvkf" path="res://Drawings/woman.png" id="9_ir8iy"]
 [ext_resource type="Texture2D" uid="uid://ckt2v0msl4hxd" path="res://Drawings/sitting.png" id="10_ir8iy"]
-
-[sub_resource type="FontVariation" id="FontVariation_4d7sh"]
 
 [node name="Node2D" type="Node2D" unique_id=1876203803]
 
@@ -38,7 +37,7 @@ offset_left = 445.0
 offset_top = 136.0
 offset_right = 668.0
 offset_bottom = 194.0
-theme_override_fonts/font = SubResource("FontVariation_4d7sh")
+theme_override_fonts/font = ExtResource("3_hqns4")
 theme_override_font_sizes/font_size = 42
 text = "Drag to die"
 
