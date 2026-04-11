@@ -9,6 +9,7 @@ func _can_drop_data(_at_position: Vector2, _data: Variant) -> bool:
 func _drop_data(_at_position: Vector2, data: Variant) -> void:
 	var drawing: Drawing = data.get_parent()
 	texture = drawing.image
+	scale = Vector2(0.6, 0.6)
 	was_changed = true
 	modulate = Color.BLACK
 	Prompt.prompt.add_drawing(drawing)

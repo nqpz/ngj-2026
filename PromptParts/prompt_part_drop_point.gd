@@ -12,9 +12,6 @@ func render(offset: int) -> Control:
 	background.expand_mode = TextureRect.EXPAND_KEEP_SIZE
 	return background
 
-func setDrawing(drawing: Drawing):
-	background.texture = drawing.image
-
 static func create() -> PromptPartDropPoint:
 	var res = PromptPartDropPoint.new()
 	return res
