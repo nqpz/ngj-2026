@@ -4,7 +4,9 @@ extends PromptPart
 var tags: String # TODO: should consider tags.
 
 func render(offset: int) -> Control:
-	return _get_richtext("___", offset)
+	var label =  _get_richtext("___", offset)
+	label.set_script(load("res://prompt_drop_point.gd"))
+	return label
 
 
 static func create() -> PromptPartDropPoint:
