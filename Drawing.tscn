@@ -2,9 +2,19 @@
 
 [ext_resource type="Script" uid="uid://dxv7y3gtqoyw7" path="res://drawing.gd" id="1_yxney"]
 [ext_resource type="Texture2D" uid="uid://heoh7w1kcvkf" path="res://Drawings/woman.png" id="2_cvv82"]
+[ext_resource type="Script" uid="uid://bibiceqtgqie2" path="res://drawing_drag_and_drop_control.gd" id="3_w27rc"]
 
 [node name="Drawing" type="Node2D" unique_id=1463495570]
 script = ExtResource("1_yxney")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1677791967]
 texture = ExtResource("2_cvv82")
+
+[node name="DragAndDrop" type="Control" parent="." unique_id=911288149]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+script = ExtResource("3_w27rc")
