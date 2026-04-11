@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cxa8180rtbavo" path="res://background.gd" id="1_wtcfe"]
 [ext_resource type="PackedScene" uid="uid://boi3veepgrt3y" path="res://Drawing.tscn" id="2_0e48y"]
 [ext_resource type="PackedScene" uid="uid://bcf40j7bpx3ka" path="res://Prompt.tscn" id="3_epypp"]
+[ext_resource type="Texture2D" uid="uid://dto0ooujuw5xg" path="res://Drawings/heart.png" id="4_rj586"]
 [ext_resource type="Texture2D" uid="uid://wubijvlt275m" path="res://Drawings/dog.png" id="5_d21ai"]
 [ext_resource type="Texture2D" uid="uid://tderinhih3wo" path="res://Drawings/bearded_man.png" id="6_kdubu"]
 [ext_resource type="Texture2D" uid="uid://b3k6b2a3clu4q" path="res://Drawings/tree.png" id="7_d21ai"]
@@ -25,9 +26,13 @@ polygon = PackedVector2Array(0, 0, 1095, 0, 1095, 75, 0, 75, 0, 75)
 [node name="Prompt2" parent="." unique_id=1403518388 instance=ExtResource("3_epypp")]
 position = Vector2(64, 586)
 
+[node name="Heart" parent="." unique_id=1463495570 instance=ExtResource("2_0e48y")]
+position = Vector2(524, 289)
+image = ExtResource("4_rj586")
+
 [node name="Drawings" type="Node2D" parent="." unique_id=626519499]
 
-[node name="Woman" parent="Drawings" unique_id=1463495570 instance=ExtResource("2_0e48y")]
+[node name="Woman" parent="Drawings" unique_id=1837430617 instance=ExtResource("2_0e48y")]
 position = Vector2(343, 277)
 image = ExtResource("9_ir8iy")
 
