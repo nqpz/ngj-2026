@@ -5,8 +5,8 @@
 [node name="Prompt" type="Node2D" unique_id=1403518388]
 script = ExtResource("1_88rr7")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=297057287]
-offset_right = 1040.0
-offset_bottom = 40.0
-theme_override_colors/default_color = Color(0.2, 0.2, 0.2, 1)
-text = "AAAAA"
+[node name="CanvasGroup" type="CanvasGroup" parent="." unique_id=1482110427]
+z_index = 2
+
+[node name="Node2D" type="Node2D" parent="." unique_id=147352044]
+z_index = 3
