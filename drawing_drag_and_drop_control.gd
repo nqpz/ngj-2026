@@ -11,3 +11,27 @@ func _get_drag_data(position):
 	preview.add_child(sprite2d)
 	set_drag_preview(preview)
 	return self
+
+var is_entered := false
+var is_pressed := false
+static var has_played := false
+
+func check():
+	if is_entered and is_pressed and !has_played:
+		has_played = true
+		get_parent().get_node("ClickSound").play()
+
+func _input(event):
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+		is_pressed = event.pressed
+		if is_pressed:
+			check()
+		else:
+			has_played = false
+
+func _on_mouse_entered() -> void:
+	is_entered = true
+	check()
+
+func _on_mouse_exited() -> void:
+	is_entered = false
