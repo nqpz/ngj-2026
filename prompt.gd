@@ -61,7 +61,7 @@ func add_drawing(drawing: Drawing):
 				d.decrease_interaction()
 			# At least one drawing still exists, so we're not quite done yet.
 			all_deleted = false
-    # Reset for next prompt
+	# Reset for next prompt
 	drawings_used_for_current_prompt = []
 	if all_deleted:
 		get_node("../Background/FadeOutTimer").start()
