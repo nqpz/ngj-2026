@@ -21,9 +21,13 @@ func read_prompts():
 func add_drawing(drawing: Drawing):
 	# Decrease interaction for all drawings not picked.
 	for d in drawing.get_parent().get_children():
-		if d != drawing:
+		if d.step() and d != drawing:
 			d.decrease_interaction()
-	show_next_prompt()
+	if drawing.get_parent() == null:
+		# TODO: Fade to black
+		pass
+	else:
+		show_next_prompt()
 
 func show_next_prompt():
 	assert(prompt_list.size() > 0, "Prompt list was empty")
