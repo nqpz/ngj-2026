@@ -1,9 +1,10 @@
+class_name Background
 extends Polygon2D
 
 @export var prompt: Prompt
 
 # Should be between 1 and 10
-var greyness_level: int = 10
+static var greyness_level: int = 10
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
