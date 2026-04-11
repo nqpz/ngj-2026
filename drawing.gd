@@ -9,6 +9,7 @@ var greyness_level: int = 1
 func _ready():
 	$Sprite2D.texture = image
 	update_color()
+	$AnimationPlayer.play("scale")
 
 func step() -> bool:
 	# Delete drawing if same color as background.
