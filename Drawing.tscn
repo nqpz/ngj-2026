@@ -42,6 +42,56 @@ _data = {
 &"scale": SubResource("Animation_pgkth")
 }
 
+[sub_resource type="Animation" id="Animation_u01r5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1.0]
+}
+
+[sub_resource type="Animation" id="Animation_ut5qb"]
+resource_name = "disappear"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:self_modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"remove"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l1d7o"]
+_data = {
+&"RESET": SubResource("Animation_u01r5"),
+&"disappear": SubResource("Animation_ut5qb")
+}
+
 [node name="Drawing" type="Node2D" unique_id=1463495570]
 script = ExtResource("1_yxney")
 
@@ -51,6 +101,9 @@ texture = ExtResource("2_cvv82")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1418526140]
 root_node = NodePath("../Sprite2D")
 libraries/ = SubResource("AnimationLibrary_u01r5")
+
+[node name="Disappear" type="AnimationPlayer" parent="." unique_id=932312712]
+libraries/ = SubResource("AnimationLibrary_l1d7o")
 
 [node name="DragAndDrop" type="Control" parent="." unique_id=911288149]
 layout_mode = 3

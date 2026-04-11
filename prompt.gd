@@ -48,10 +48,14 @@ func show_text_from_file(file_name: String):
 # Use this when when a drawing is added to the prompt.
 func add_drawing(drawing: Drawing):
 	# Decrease interaction for all drawings not picked.
+	var all_deleted = true
 	for d in drawing.get_parent().get_children():
-		if d.step() and d != drawing:
-			d.decrease_interaction()
-	if get_node("../Drawings").get_children().is_empty():
+		if d.step():
+			if d != drawing:
+				d.decrease_interaction()
+			# At least one drawing still exists, so we're not quite done yet.
+			all_deleted = false
+	if all_deleted:
 		get_node("../Background/FadeOutTimer").start()
 	else:
 		$AnimationPlayer.play("fade_out") # Animation calls show_next_prompt()

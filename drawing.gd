@@ -14,11 +14,15 @@ func _ready():
 func step() -> bool:
 	# Delete drawing if same color as background.
 	if greyness_level + 2 >= Background.greyness_level - 1:
-		get_parent().remove_child(self)
-		queue_free()
+		# Fade out. Once faded out, the animation will call remove() further down.
+		$Disappear.play("disappear")
 		return false
 	else:
 		return true
+
+func remove():
+	get_parent().remove_child(self)
+	queue_free()
 
 func decrease_interaction():
 	if greyness_level == 20:
