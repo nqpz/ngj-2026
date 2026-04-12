@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cxa8180rtbavo" path="res://background.gd" id="1_wtcfe"]
 [ext_resource type="PackedScene" uid="uid://boi3veepgrt3y" path="res://Drawing.tscn" id="2_0e48y"]
+[ext_resource type="AudioStream" uid="uid://dq3omw2icioja" path="res://forget.ogg" id="3_0h7mo"]
 [ext_resource type="PackedScene" uid="uid://bcf40j7bpx3ka" path="res://Prompt.tscn" id="3_epypp"]
 [ext_resource type="FontFile" uid="uid://ceq7teotfbsxo" path="res://KaushanScript-Regular.ttf" id="3_hqns4"]
 [ext_resource type="Texture2D" uid="uid://dto0ooujuw5xg" path="res://Drawings/heart.png" id="4_rj586"]
@@ -72,6 +73,9 @@ libraries/ = SubResource("AnimationLibrary_nr8wp")
 position = Vector2(64, 574)
 drawings = NodePath("../Drawings")
 tutorial_things = NodePath("../Start screen")
+
+[node name="ForgetSound" type="AudioStreamPlayer" parent="Prompt2" unique_id=525629586]
+stream = ExtResource("3_0h7mo")
 
 [node name="Start screen" type="Node2D" parent="." unique_id=908532768]
 

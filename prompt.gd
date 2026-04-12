@@ -70,6 +70,7 @@ func add_drawing(drawing: Drawing):
 		return
 	# Decrease interaction for all drawings not picked.
 	var all_deleted = true
+	var at_least_one_deleted = false
 
 	for maybe_drawing in drawing.get_parent().get_children():
 		var d := maybe_drawing as Drawing
@@ -79,6 +80,10 @@ func add_drawing(drawing: Drawing):
 			if d.step():
 				# At least one drawing still exists, so we're not quite done yet.
 				all_deleted = false
+			else:
+				at_least_one_deleted = true
+		if at_least_one_deleted:
+			$ForgetSound.play()
 	# Reset for next prompt
 	drawings_used_for_current_prompt = []
 	if all_deleted:
