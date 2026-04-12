@@ -16,22 +16,22 @@ func increase_interaction():
 	if greyness_level == 0:
 		return
 	# Make less grey
-	greyness_level -= 2
+	greyness_level -= 1
 	# But not greyer than minimum
 	if greyness_level < 0:
 		greyness_level = 0
-	$AnimationPlayer.speed_scale *= 1.3
+	$AnimationPlayer.speed_scale *= 1.1401754251
 	update_color()
 
 func decrease_interaction():
 	if greyness_level == 20:
 		return
 	# Make greyer
-	greyness_level += 2
+	greyness_level += 1
 	# But not greyer than background
 	if greyness_level > Background.greyness_level:
 		greyness_level = Background.greyness_level
-	$AnimationPlayer.speed_scale /= 1.3
+	$AnimationPlayer.speed_scale /= 1.1401754251
 	update_color()
 
 func step() -> bool:
