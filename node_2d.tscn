@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cxa8180rtbavo" path="res://background.gd" id="1_wtcfe"]
 [ext_resource type="PackedScene" uid="uid://boi3veepgrt3y" path="res://Drawing.tscn" id="2_0e48y"]
-[ext_resource type="Script" uid="uid://dgd87j7tyqv3j" path="res://background_drop_point.gd" id="2_rjqkl"]
+[ext_resource type="Script" path="res://background_drop_point.gd" id="2_rjqkl"]
 [ext_resource type="AudioStream" uid="uid://dq3omw2icioja" path="res://forget.ogg" id="3_0h7mo"]
 [ext_resource type="PackedScene" uid="uid://bcf40j7bpx3ka" path="res://Prompt.tscn" id="3_epypp"]
 [ext_resource type="FontFile" uid="uid://ceq7teotfbsxo" path="res://KaushanScript-Regular.ttf" id="3_hqns4"]
@@ -19,6 +19,9 @@
 [ext_resource type="Texture2D" uid="uid://bca6ykgimkx2" path="res://Drawings/also_dog.png" id="15_ta5nu"]
 [ext_resource type="Texture2D" uid="uid://0k550nbsyrfl" path="res://Drawings/girl.png" id="16_flf07"]
 [ext_resource type="Texture2D" uid="uid://csm2rge0ve54v" path="res://Drawings/computer.png" id="17_k73cj"]
+[ext_resource type="Texture2D" uid="uid://cdgiw78w22qki" path="res://Drawings/baby.png" id="20_ei405"]
+[ext_resource type="Texture2D" uid="uid://8xs448blcn3u" path="res://Drawings/gramophone.png" id="21_e8dv2"]
+[ext_resource type="Texture2D" uid="uid://d3xnl5i8rqd65" path="res://Drawings/dancer.png" id="22_2nhjh"]
 
 [sub_resource type="Animation" id="Animation_nr8wp"]
 length = 0.001
@@ -169,7 +172,7 @@ text = "Drag to die"
 [node name="Drawings" type="Node2D" parent="." unique_id=626519499]
 
 [node name="Woman" parent="Drawings" unique_id=1837430617 instance=ExtResource("2_0e48y")]
-position = Vector2(343, 277)
+position = Vector2(370, 253)
 image = ExtResource("9_ir8iy")
 
 [node name="Dog" parent="Drawings" unique_id=264802716 instance=ExtResource("2_0e48y")]
@@ -181,7 +184,7 @@ position = Vector2(766, 265)
 image = ExtResource("6_kdubu")
 
 [node name="Tree" parent="Drawings" unique_id=1134631513 instance=ExtResource("2_0e48y")]
-position = Vector2(196, 397)
+position = Vector2(223, 373)
 image = ExtResource("7_d21ai")
 
 [node name="Person" parent="Drawings" unique_id=2023863569 instance=ExtResource("2_0e48y")]
@@ -193,7 +196,7 @@ position = Vector2(1030, 449)
 image = ExtResource("10_ir8iy")
 
 [node name="Propeller hat person" parent="Drawings" unique_id=18894807 instance=ExtResource("2_0e48y")]
-position = Vector2(314, 358)
+position = Vector2(341, 334)
 image = ExtResource("12_x0ka3")
 
 [node name="bike" parent="Drawings" unique_id=1463951131 instance=ExtResource("2_0e48y")]
@@ -205,11 +208,23 @@ position = Vector2(786, 373)
 image = ExtResource("15_ta5nu")
 
 [node name="girl" parent="Drawings" unique_id=1816369102 instance=ExtResource("2_0e48y")]
-position = Vector2(415, 396)
+position = Vector2(442, 372)
 image = ExtResource("16_flf07")
 
 [node name="pc" parent="Drawings" unique_id=2140997575 instance=ExtResource("2_0e48y")]
 position = Vector2(648, 414)
 image = ExtResource("17_k73cj")
+
+[node name="baby" parent="Drawings" unique_id=101113443 instance=ExtResource("2_0e48y")]
+position = Vector2(244, 273)
+image = ExtResource("20_ei405")
+
+[node name="grammophone" parent="Drawings" unique_id=2111334231 instance=ExtResource("2_0e48y")]
+position = Vector2(322, 431)
+image = ExtResource("21_e8dv2")
+
+[node name="dancer" parent="Drawings" unique_id=1475416916 instance=ExtResource("2_0e48y")]
+position = Vector2(854, 302)
+image = ExtResource("22_2nhjh")
 
 [connection signal="timeout" from="Background/FadeOutTimer" to="Background" method="darken"]
