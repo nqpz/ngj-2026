@@ -77,6 +77,8 @@ func add_drawing(drawing: Drawing):
 	var all_deleted = true
 	var at_least_one_deleted = false
 
+	for d in drawings_used_for_current_prompt:
+		d.increase_interaction()
 	for maybe_drawing in drawing.get_parent().get_children():
 		var d := maybe_drawing as Drawing
 		if d:
