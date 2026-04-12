@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cxa8180rtbavo" path="res://background.gd" id="1_wtcfe"]
 [ext_resource type="PackedScene" uid="uid://boi3veepgrt3y" path="res://Drawing.tscn" id="2_0e48y"]
+[ext_resource type="Script" uid="uid://dgd87j7tyqv3j" path="res://background_drop_point.gd" id="2_rjqkl"]
 [ext_resource type="AudioStream" uid="uid://dq3omw2icioja" path="res://forget.ogg" id="3_0h7mo"]
 [ext_resource type="PackedScene" uid="uid://bcf40j7bpx3ka" path="res://Prompt.tscn" id="3_epypp"]
 [ext_resource type="FontFile" uid="uid://ceq7teotfbsxo" path="res://KaushanScript-Regular.ttf" id="3_hqns4"]
@@ -120,6 +121,15 @@ prompt_animation_player = NodePath("../Prompt/AnimationPlayer")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Background" unique_id=829499911]
 libraries/ = SubResource("AnimationLibrary_ta5nu")
+
+[node name="droppoint" type="Control" parent="Background" unique_id=805209261]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 1106.0
+offset_bottom = 500.0
+script = ExtResource("2_rjqkl")
 
 [node name="Prompt" type="Polygon2D" parent="." unique_id=2080488018]
 position = Vector2(30, 537)
