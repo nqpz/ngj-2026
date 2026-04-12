@@ -35,6 +35,9 @@ func _show_tutorial():
 func _show_real_scene():
 	tutorial_things.hide()
 	show_text_from_file(prologue_file_name)
+
+# Called from background animator, so the grey versions don't appear in the black background
+func show_drawings():
 	drawings.show()
 
 func _process(delta):

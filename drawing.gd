@@ -7,6 +7,7 @@ extends Node2D
 var greyness_level: int = 1
 
 func _ready():
+	greyness_level = (randi() % 3)
 	$Sprite2D.texture = image
 	update_color()
 	$AnimationPlayer.play("scale")
