@@ -54,6 +54,7 @@ func _process(delta):
 			message_queue = null
 
 func read_prompts():
+	prompt_list.clear()
 	var f = FileAccess.open(prompt_file_names[age], FileAccess.READ)
 	var text = f.get_as_text()
 	prompt_list = text.split("\n", false)
@@ -109,7 +110,7 @@ func _is_in_intro() -> bool:
 	return !drawings.visible
 
 func show_next_prompt():
-	if prompt_list.size() == 0 || age_counter >= max_number_of_prompts_pr_stage:
+	if prompt_list.size() == 0 || age_counter > max_number_of_prompts_pr_stage:
 		if age < 2: # There are ages 0, 1, 2. Don't increase above that.
 			age += 1
 		read_prompts()
