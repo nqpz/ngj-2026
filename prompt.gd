@@ -73,11 +73,12 @@ func add_drawing(drawing: Drawing):
 
 	for maybe_drawing in drawing.get_parent().get_children():
 		var d := maybe_drawing as Drawing
-		if d && d.step():
+		if d:
 			if d not in drawings_used_for_current_prompt:
 				d.decrease_interaction()
-			# At least one drawing still exists, so we're not quite done yet.
-			all_deleted = false
+			if d.step():
+				# At least one drawing still exists, so we're not quite done yet.
+				all_deleted = false
 	# Reset for next prompt
 	drawings_used_for_current_prompt = []
 	if all_deleted:

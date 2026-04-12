@@ -11,9 +11,20 @@ func _ready():
 	update_color()
 	$AnimationPlayer.play("scale")
 
+func decrease_interaction():
+	if greyness_level == 20:
+		return
+	# Make greyer
+	greyness_level += 2
+	# But not greyer than background
+	if greyness_level > Background.greyness_level:
+		greyness_level = Background.greyness_level
+	$AnimationPlayer.speed_scale /= 1.3
+	update_color()
+
 func step() -> bool:
-	# Delete drawing if same color as background.
-	if greyness_level + 2 >= Background.greyness_level - 1:
+	# Delete drawing if same color as background (the background will be changed with -1 after this).
+	if greyness_level >= Background.greyness_level - 1:
 		# Fade out. Once faded out, the animation will call remove() further down.
 		$Disappear.play("disappear")
 		return false
@@ -23,13 +34,6 @@ func step() -> bool:
 func remove():
 	get_parent().remove_child(self)
 	queue_free()
-
-func decrease_interaction():
-	if greyness_level == 20:
-		return
-	greyness_level += 2
-	$AnimationPlayer.speed_scale /= 1.3
-	update_color()
 
 func update_color():
 	var color_val = 0.05*float(greyness_level)
