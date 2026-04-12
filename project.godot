@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="ngj2026"
+config/name="Memnomories"
 run/main_scene="uid://bwfo7m8pwadfp"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 
