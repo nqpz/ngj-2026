@@ -13,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://heoh7w1kcvkf" path="res://Drawings/woman.png" id="9_ir8iy"]
 [ext_resource type="Texture2D" uid="uid://ckt2v0msl4hxd" path="res://Drawings/sitting.png" id="10_ir8iy"]
 [ext_resource type="Texture2D" uid="uid://g48kf70tj4un" path="res://Drawings/propeller_hat_person.png" id="12_x0ka3"]
+[ext_resource type="Texture2D" uid="uid://deofgooemgbcx" path="res://Drawings/bike.png" id="14_d2bti"]
+[ext_resource type="Texture2D" uid="uid://bca6ykgimkx2" path="res://Drawings/also_dog.png" id="15_ta5nu"]
 
 [sub_resource type="Animation" id="Animation_nr8wp"]
 length = 0.001
@@ -163,5 +165,13 @@ image = ExtResource("10_ir8iy")
 [node name="Propeller hat person" parent="Drawings" unique_id=18894807 instance=ExtResource("2_0e48y")]
 position = Vector2(439, 341)
 image = ExtResource("12_x0ka3")
+
+[node name="bike" parent="Drawings" unique_id=1463951131 instance=ExtResource("2_0e48y")]
+position = Vector2(527, 434)
+image = ExtResource("14_d2bti")
+
+[node name="also_dog" parent="Drawings" unique_id=1954262978 instance=ExtResource("2_0e48y")]
+position = Vector2(707, 408)
+image = ExtResource("15_ta5nu")
 
 [connection signal="timeout" from="Background/FadeOutTimer" to="Background" method="darken"]
