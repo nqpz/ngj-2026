@@ -3,3 +3,5 @@
 Our game for the game jam.
 
 Game jam theme: "Nothing".
+
+Run `./export.sh` to export for web.
