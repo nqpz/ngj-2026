@@ -18,6 +18,7 @@ var message_time: float = 6
 
 @export var drawings: Node2D
 @export var tutorial_things: Node2D
+@export var background_animator: AnimationPlayer
 
 static var prompt: Prompt
 
@@ -32,9 +33,9 @@ func _show_tutorial():
 	_render_prompt("I feel my [] stopping.")
 
 func _show_real_scene():
-	drawings.show()
 	tutorial_things.hide()
 	show_text_from_file(prologue_file_name)
+	drawings.show()
 
 func _process(delta):
 	if message_queue == null:
@@ -89,7 +90,16 @@ func add_drawing(drawing: Drawing):
 	if all_deleted:
 		get_node("../Background/FadeOutTimer").start()
 	else:
+		if _is_in_intro():
+			background_animator.play("fade_black_intro")
 		$AnimationPlayer.play("fade_out") # Animation calls show_next_prompt()
+
+# If we wan't so show the next prompt, but "drawings" are hidden, it means that we are in the
+# tutorial level (the only time drawings are not visible) and that the user has finished the
+# tutorial prompt. In that case we need to go to the real scene:
+# (Yes, this is the best place to tranistion from tutorial to real)
+func _is_in_intro() -> bool:
+	return !drawings.visible
 
 func show_next_prompt():
 	if prompt_list.size() == 0 || age_counter >= max_number_of_prompts_pr_stage:
@@ -98,17 +108,15 @@ func show_next_prompt():
 		read_prompts()
 		age_counter = 0
 	age_counter += 1
-	# If we wan't so show the next prompt, but "drawings" are hidden, it means that we are in the
-	# tutorial level (the only time drawings are not visible) and that the user has finished the
-	# tutorial prompt. In that case we need to go to the real scene:
-	# (Yes, this is the best place to tranistion from tutorial to real)
-	if !drawings.visible:
+	var is_in_intro = _is_in_intro()
+	if is_in_intro:
 		_show_real_scene()
 	var idx = randi() % prompt_list.size()
 	_render_prompt(prompt_list[idx])
 	$AnimationPlayer.play("fade_in")
 	prompt_list.remove_at(idx)
-	emit_signal("prompt_finished")
+	if !is_in_intro:
+		emit_signal("prompt_finished")
 
 func _all_drop_points_are_filled() -> bool:
 	for c in $Node2D.get_children():

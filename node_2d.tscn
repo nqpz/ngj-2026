@@ -14,6 +14,43 @@
 [ext_resource type="Texture2D" uid="uid://ckt2v0msl4hxd" path="res://Drawings/sitting.png" id="10_ir8iy"]
 [ext_resource type="Texture2D" uid="uid://g48kf70tj4un" path="res://Drawings/propeller_hat_person.png" id="12_x0ka3"]
 
+[sub_resource type="Animation" id="Animation_nr8wp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color:v")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1.0]
+}
+
+[sub_resource type="Animation" id="Animation_d2bti"]
+resource_name = "fade_black_intro"
+length = 30.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color:v")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 20, 30),
+"transitions": PackedFloat32Array(1, 1, 1, 1.3660405),
+"update": 0,
+"values": [1.0, 0.0, 0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ta5nu"]
+_data = {
+&"RESET": SubResource("Animation_nr8wp"),
+&"fade_black_intro": SubResource("Animation_d2bti")
+}
+
 [sub_resource type="Animation" id="Animation_x0ka3"]
 length = 0.001
 tracks/0/type = "value"
@@ -62,6 +99,9 @@ prompt_animation_player = NodePath("../Prompt/AnimationPlayer")
 
 [node name="FadeOutTimer" type="Timer" parent="Background" unique_id=627069753]
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Background" unique_id=829499911]
+libraries/ = SubResource("AnimationLibrary_ta5nu")
+
 [node name="Prompt" type="Polygon2D" parent="." unique_id=2080488018]
 position = Vector2(30, 537)
 polygon = PackedVector2Array(0, 0, 1095, 0, 1095, 105, 548.818, 105, 0, 105, 0, 105)
@@ -69,10 +109,11 @@ polygon = PackedVector2Array(0, 0, 1095, 0, 1095, 105, 548.818, 105, 0, 105, 0, 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Prompt" unique_id=1583263197]
 libraries/ = SubResource("AnimationLibrary_nr8wp")
 
-[node name="Prompt2" parent="." unique_id=1403518388 node_paths=PackedStringArray("drawings", "tutorial_things") instance=ExtResource("3_epypp")]
+[node name="Prompt2" parent="." unique_id=1403518388 node_paths=PackedStringArray("drawings", "tutorial_things", "background_animator") instance=ExtResource("3_epypp")]
 position = Vector2(64, 574)
 drawings = NodePath("../Drawings")
 tutorial_things = NodePath("../Start screen")
+background_animator = NodePath("../Background/AnimationPlayer")
 
 [node name="ForgetSound" type="AudioStreamPlayer" parent="Prompt2" unique_id=525629586]
 stream = ExtResource("3_0h7mo")
