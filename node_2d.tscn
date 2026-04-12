@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cxa8180rtbavo" path="res://background.gd" id="1_wtcfe"]
 [ext_resource type="PackedScene" uid="uid://boi3veepgrt3y" path="res://Drawing.tscn" id="2_0e48y"]
-[ext_resource type="Script" uid="uid://dgd87j7tyqv3j" path="res://background_drop_point.gd" id="2_rjqkl"]
+[ext_resource type="Script" path="res://background_drop_point.gd" id="2_rjqkl"]
 [ext_resource type="AudioStream" uid="uid://dq3omw2icioja" path="res://forget.ogg" id="3_0h7mo"]
 [ext_resource type="PackedScene" uid="uid://bcf40j7bpx3ka" path="res://Prompt.tscn" id="3_epypp"]
 [ext_resource type="FontFile" uid="uid://ceq7teotfbsxo" path="res://KaushanScript-Regular.ttf" id="3_hqns4"]
@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://8xs448blcn3u" path="res://Drawings/gramophone.png" id="21_e8dv2"]
 [ext_resource type="Texture2D" uid="uid://d3xnl5i8rqd65" path="res://Drawings/dancer.png" id="22_2nhjh"]
 [ext_resource type="Texture2D" uid="uid://o4stqtbs7nhy" path="res://Drawings/jumper.png" id="23_e8dv2"]
+[ext_resource type="Texture2D" uid="uid://db8pv2biyl8kn" path="res://Drawings/buisnessman.png" id="24_2nhjh"]
 
 [sub_resource type="Animation" id="Animation_nr8wp"]
 length = 0.001
@@ -181,7 +182,7 @@ position = Vector2(596, 341)
 image = ExtResource("5_d21ai")
 
 [node name="Bearded man" parent="Drawings" unique_id=149693373 instance=ExtResource("2_0e48y")]
-position = Vector2(766, 265)
+position = Vector2(709, 264)
 image = ExtResource("6_kdubu")
 
 [node name="Tree" parent="Drawings" unique_id=1134631513 instance=ExtResource("2_0e48y")]
@@ -231,5 +232,9 @@ image = ExtResource("22_2nhjh")
 [node name="jumper" parent="Drawings" unique_id=478176979 instance=ExtResource("2_0e48y")]
 position = Vector2(879, 220)
 image = ExtResource("23_e8dv2")
+
+[node name="buisnessman" parent="Drawings" unique_id=106912398 instance=ExtResource("2_0e48y")]
+position = Vector2(477, 266)
+image = ExtResource("24_2nhjh")
 
 [connection signal="timeout" from="Background/FadeOutTimer" to="Background" method="darken"]
