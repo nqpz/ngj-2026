@@ -229,7 +229,7 @@ position = Vector2(854, 302)
 image = ExtResource("22_2nhjh")
 
 [node name="jumper" parent="Drawings" unique_id=478176979 instance=ExtResource("2_0e48y")]
-position = Vector2(1018, 115)
+position = Vector2(879, 220)
 image = ExtResource("23_e8dv2")
 
 [connection signal="timeout" from="Background/FadeOutTimer" to="Background" method="darken"]
