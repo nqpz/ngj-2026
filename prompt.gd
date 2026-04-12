@@ -66,6 +66,7 @@ var drawings_used_for_current_prompt := []
 
 # Use this when when a drawing is added to the prompt.
 func add_drawing(drawing: Drawing):
+	$PlaceSound.play()
 	drawings_used_for_current_prompt.append(drawing)
 	if !_all_drop_points_are_filled():
 		return

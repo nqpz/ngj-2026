@@ -5,6 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://dq3omw2icioja" path="res://forget.ogg" id="3_0h7mo"]
 [ext_resource type="PackedScene" uid="uid://bcf40j7bpx3ka" path="res://Prompt.tscn" id="3_epypp"]
 [ext_resource type="FontFile" uid="uid://ceq7teotfbsxo" path="res://KaushanScript-Regular.ttf" id="3_hqns4"]
+[ext_resource type="AudioStream" uid="uid://dbfarxjs3ekb4" path="res://place.ogg" id="4_nr8wp"]
 [ext_resource type="Texture2D" uid="uid://dto0ooujuw5xg" path="res://Drawings/heart.png" id="4_rj586"]
 [ext_resource type="Texture2D" uid="uid://wubijvlt275m" path="res://Drawings/dog.png" id="5_d21ai"]
 [ext_resource type="Texture2D" uid="uid://tderinhih3wo" path="res://Drawings/bearded_man.png" id="6_kdubu"]
@@ -119,6 +120,9 @@ background_animator = NodePath("../Background/AnimationPlayer")
 
 [node name="ForgetSound" type="AudioStreamPlayer" parent="Prompt2" unique_id=525629586]
 stream = ExtResource("3_0h7mo")
+
+[node name="PlaceSound" type="AudioStreamPlayer" parent="Prompt2" unique_id=1208297298]
+stream = ExtResource("4_nr8wp")
 
 [node name="Start screen" type="Node2D" parent="." unique_id=908532768]
 
